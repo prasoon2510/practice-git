@@ -1,4 +1,4 @@
-from database import Base
+from database1 import Base
 from sqlalchemy import Column,Integer,String
 from pydantic import BaseModel
 #orm model ------creates a table in database
