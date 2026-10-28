@@ -320,27 +320,520 @@
 
 
 
-// ================= TELUGU PLAYLIST SEARCH =================
 
-const songSearch = document.getElementById("songSearch");
-const songRows = document.querySelectorAll("#songList .song-row");
+<!-- ================= MUSIC PLAYER AND TELUGU PLAYLIST ================= -->
+<section class="music-section section-pad" id="music">
 
-songSearch.addEventListener("input", function () {
-  const searchText = this.value.trim().toLowerCase();
+  <div class="container">
 
-  songRows.forEach(function (song) {
-    const title = song.dataset.title || "";
-    const language = song.dataset.language || "";
+    <!-- Section Heading -->
+    <div class="section-heading text-center light-heading">
+      <span class="section-kicker">PRESS PLAY ON A MEMORY</span>
+      <h2>The <span>Telugu Music Room</span></h2>
+      <p>
+        Celebrate the legendary voice of S. P. Balasubrahmanyam.
+        Explore his unforgettable Telugu melodies and hit songs.
+      </p>
+    </div>
 
-    const matches = `${title} ${language}`
-      .toLowerCase()
-      .includes(searchText);
+    <div class="row g-4 mt-3">
 
-    song.hidden = !matches;
-  });
-});
+      <!-- ================= YOUTUBE PLAYER ================= -->
+      <div class="col-lg-7">
 
-// ================= END OF TELUGU PLAYLIST SEARCH =================
+        <div class="player-card">
+
+          <div class="player-topline">
+            <span class="live-dot"></span>
+            SPB TELUGU HITS
+          </div>
+
+          <!-- Embedded Telugu music video -->
+          <div class="video-frame">
+            <iframe
+              id="musicPlayer"
+              src="https://www.youtube-nocookie.com/embed?listType=search&list=SP%20Balasubrahmanyam%20Telugu%20hit%20songs"
+              title="SPB Telugu hit songs on YouTube"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen
+              loading="lazy">
+            </iframe>
+          </div>
+
+          <div class="player-info">
+
+            <div>
+              <span class="now-label">TELUGU SONG COLLECTION</span>
+              <h3 id="nowPlayingTitle">SPB Telugu Hits</h3>
+              <p id="nowPlayingMeta">
+                S. P. Balasubrahmanyam · Telugu Classics
+              </p>
+            </div>
+
+            <a
+              id="openSong"
+              class="round-link"
+              href="https://www.youtube.com/results?search_query=SP+Balu+Telugu+hit+songs"
+              target="_blank"
+              rel="noopener"
+              aria-label="Explore Telugu songs on YouTube">
+
+              <i class="bi bi-box-arrow-up-right"></i>
+            </a>
+
+          </div>
+
+          <p class="player-disclaimer">
+            <i class="bi bi-info-circle me-1"></i>
+            Music is provided by YouTube. If the embedded search player
+            is unavailable, use the song links below.
+          </p>
+
+          <div class="px-4 pb-4">
+            <a
+              class="btn btn-gold"
+              href="https://www.youtube.com/results?search_query=SP+Balu+Telugu+hit+songs"
+              target="_blank"
+              rel="noopener">
+
+              <i class="bi bi-youtube me-2"></i>
+              Explore Telugu Hits
+            </a>
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <!-- ================= TELUGU PLAYLIST ================= -->
+      <div class="col-lg-5">
+
+        <div class="playlist-card">
+
+          <div class="playlist-head">
+            <div>
+              <span class="section-kicker">FAN FAVOURITES</span>
+              <h3>Telugu Hit Songs</h3>
+            </div>
+
+            <span class="playlist-count">12 songs</span>
+          </div>
+
+
+          <!-- Song Search -->
+          <div class="playlist-tools">
+
+            <label class="visually-hidden" for="songSearch">
+              Search Telugu songs
+            </label>
+
+            <i class="bi bi-search"></i>
+
+            <input
+              id="songSearch"
+              type="search"
+              placeholder="Search Telugu songs..."
+              autocomplete="off">
+
+          </div>
+
+
+          <!-- Song List -->
+          <div class="song-list" id="songList">
+
+
+            <!-- SONG 1 -->
+            <a
+              class="song-row"
+              data-title="Sankara Nada Sareera"
+              data-language="Telugu"
+              href="https://www.youtube.com/results?search_query=SPB+Sankara+Nada+Sareera+Sankarabharanam"
+              target="_blank"
+              rel="noopener">
+
+              <span class="song-number">01</span>
+
+              <span class="song-play">
+                <i class="bi bi-play-fill"></i>
+              </span>
+
+              <span class="song-meta">
+                <strong>Sankara Nada Sareera</strong>
+                <small>Telugu · Sankarabharanam</small>
+              </span>
+
+              <span class="song-time">
+                <i class="bi bi-box-arrow-up-right"></i>
+              </span>
+
+            </a>
+
+
+            <!-- SONG 2 -->
+            <a
+              class="song-row"
+              data-title="Aamani Paadave Haayiga"
+              data-language="Telugu"
+              href="https://www.youtube.com/results?search_query=SPB+Aamani+Paadave+Haayiga+Geethanjali"
+              target="_blank"
+              rel="noopener">
+
+              <span class="song-number">02</span>
+
+              <span class="song-play">
+                <i class="bi bi-play-fill"></i>
+              </span>
+
+              <span class="song-meta">
+                <strong>Aamani Paadave Haayiga</strong>
+                <small>Telugu · Geethanjali</small>
+              </span>
+
+              <span class="song-time">
+                <i class="bi bi-box-arrow-up-right"></i>
+              </span>
+
+            </a>
+
+
+            <!-- SONG 3 -->
+            <a
+              class="song-row"
+              data-title="O Papa Lali"
+              data-language="Telugu"
+              href="https://www.youtube.com/results?search_query=SPB+O+Papa+Lali+Geethanjali"
+              target="_blank"
+              rel="noopener">
+
+              <span class="song-number">03</span>
+
+              <span class="song-play">
+                <i class="bi bi-play-fill"></i>
+              </span>
+
+              <span class="song-meta">
+                <strong>O Papa Lali</strong>
+                <small>Telugu · Geethanjali</small>
+              </span>
+
+              <span class="song-time">
+                <i class="bi bi-box-arrow-up-right"></i>
+              </span>
+
+            </a>
+
+
+            <!-- SONG 4 -->
+            <a
+              class="song-row"
+              data-title="Mounamelanoyi"
+              data-language="Telugu"
+              href="https://www.youtube.com/results?search_query=SPB+Mounamelanoyi+Sagara+Sangamam"
+              target="_blank"
+              rel="noopener">
+
+              <span class="song-number">04</span>
+
+              <span class="song-play">
+                <i class="bi bi-play-fill"></i>
+              </span>
+
+              <span class="song-meta">
+                <strong>Mounamelanoyi</strong>
+                <small>Telugu · Sagara Sangamam</small>
+              </span>
+
+              <span class="song-time">
+                <i class="bi bi-box-arrow-up-right"></i>
+              </span>
+
+            </a>
+
+
+            <!-- SONG 5 -->
+            <a
+              class="song-row"
+              data-title="Ee Theega Puvvuno"
+              data-language="Telugu"
+              href="https://www.youtube.com/results?search_query=SPB+Ee+Theega+Puvvuno+Sankarabharanam"
+              target="_blank"
+              rel="noopener">
+
+              <span class="song-number">05</span>
+
+              <span class="song-play">
+                <i class="bi bi-play-fill"></i>
+              </span>
+
+              <span class="song-meta">
+                <strong>Ee Theega Puvvuno</strong>
+                <small>Telugu · Sankarabharanam</small>
+              </span>
+
+              <span class="song-time">
+                <i class="bi bi-box-arrow-up-right"></i>
+              </span>
+
+            </a>
+
+
+            <!-- SONG 6 -->
+            <a
+              class="song-row"
+              data-title="Jallanta Kavvinta"
+              data-language="Telugu"
+              href="https://www.youtube.com/results?search_query=SPB+Jallanta+Kavvinta+Geethanjali"
+              target="_blank"
+              rel="noopener">
+
+              <span class="song-number">06</span>
+
+              <span class="song-play">
+                <i class="bi bi-play-fill"></i>
+              </span>
+
+              <span class="song-meta">
+                <strong>Jallanta Kavvinta</strong>
+                <small>Telugu · Geethanjali</small>
+              </span>
+
+              <span class="song-time">
+                <i class="bi bi-box-arrow-up-right"></i>
+              </span>
+
+            </a>
+
+
+            <!-- SONG 7 -->
+            <a
+              class="song-row"
+              data-title="Priyathama Priyathama"
+              data-language="Telugu"
+              href="https://www.youtube.com/results?search_query=SPB+Priyathama+Priyathama+Prema+1989"
+              target="_blank"
+              rel="noopener">
+
+              <span class="song-number">07</span>
+
+              <span class="song-play">
+                <i class="bi bi-play-fill"></i>
+              </span>
+
+              <span class="song-meta">
+                <strong>Priyathama Priyathama</strong>
+                <small>Telugu · Prema</small>
+              </span>
+
+              <span class="song-time">
+                <i class="bi bi-box-arrow-up-right"></i>
+              </span>
+
+            </a>
+
+
+            <!-- SONG 8 -->
+            <a
+              class="song-row"
+              data-title="Cheppalani Undi"
+              data-language="Telugu"
+              href="https://www.youtube.com/results?search_query=SPB+Cheppalani+Undi+Rudraveena"
+              target="_blank"
+              rel="noopener">
+
+              <span class="song-number">08</span>
+
+              <span class="song-play">
+                <i class="bi bi-play-fill"></i>
+              </span>
+
+              <span class="song-meta">
+                <strong>Cheppalani Undi</strong>
+                <small>Telugu · Rudraveena</small>
+              </span>
+
+              <span class="song-time">
+                <i class="bi bi-box-arrow-up-right"></i>
+              </span>
+
+            </a>
+
+
+            <!-- SONG 9 -->
+            <a
+              class="song-row"
+              data-title="Nammaku Nammaku"
+              data-language="Telugu"
+              href="https://www.youtube.com/results?search_query=SPB+Nammaku+Nammaku+Rudraveena"
+              target="_blank"
+              rel="noopener">
+
+              <span class="song-number">09</span>
+
+              <span class="song-play">
+                <i class="bi bi-play-fill"></i>
+              </span>
+
+              <span class="song-meta">
+                <strong>Nammaku Nammaku</strong>
+                <small>Telugu · Rudraveena</small>
+              </span>
+
+              <span class="song-time">
+                <i class="bi bi-box-arrow-up-right"></i>
+              </span>
+
+            </a>
+
+
+            <!-- SONG 10 -->
+            <a
+              class="song-row"
+              data-title="Yamaho Yama"
+              data-language="Telugu"
+              href="https://www.youtube.com/results?search_query=SPB+Yamaho+Yama+Jagadeka+Veerudu+Athiloka+Sundari"
+              target="_blank"
+              rel="noopener">
+
+              <span class="song-number">10</span>
+
+              <span class="song-play">
+                <i class="bi bi-play-fill"></i>
+              </span>
+
+              <span class="song-meta">
+                <strong>Yamaho Yama</strong>
+                <small>Telugu · Jagadeka Veerudu Athiloka Sundari</small>
+              </span>
+
+              <span class="song-time">
+                <i class="bi bi-box-arrow-up-right"></i>
+              </span>
+
+            </a>
+
+
+            <!-- SONG 11 -->
+            <a
+              class="song-row"
+              data-title="Tella Cheeraku"
+              data-language="Telugu"
+              href="https://www.youtube.com/results?search_query=SPB+Tella+Cheeraku+Telugu+song"
+              target="_blank"
+              rel="noopener">
+
+              <span class="song-number">11</span>
+
+              <span class="song-play">
+                <i class="bi bi-play-fill"></i>
+              </span>
+
+              <span class="song-meta">
+                <strong>Tella Cheeraku</strong>
+                <small>Telugu · SPB song search</small>
+              </span>
+
+              <span class="song-time">
+                <i class="bi bi-box-arrow-up-right"></i>
+              </span>
+
+            </a>
+
+
+            <!-- SONG 12 -->
+            <a
+              class="song-row"
+              data-title="SPB Telugu Romantic Hits"
+              data-language="Telugu"
+              href="https://www.youtube.com/results?search_query=SP+Balu+Telugu+romantic+hit+songs"
+              target="_blank"
+              rel="noopener">
+
+              <span class="song-number">12</span>
+
+              <span class="song-play">
+                <i class="bi bi-play-fill"></i>
+              </span>
+
+              <span class="song-meta">
+                <strong>Telugu Romantic Hits</strong>
+                <small>Telugu · SPB melodies</small>
+              </span>
+
+              <span class="song-time">
+                <i class="bi bi-box-arrow-up-right"></i>
+              </span>
+
+            </a>
+
+          </div>
+
+
+          <!-- Playlist Footer -->
+          <div class="playlist-footer">
+
+            <span>
+              <i class="bi bi-music-note-list me-1"></i>
+              Telugu-only collection
+            </span>
+
+            <a
+              href="https://www.youtube.com/results?search_query=SP+Balu+Telugu+hit+songs"
+              target="_blank"
+              rel="noopener">
+
+              More Telugu Songs
+              <i class="bi bi-arrow-up-right"></i>
+
+            </a>
+
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+
+
+    <!-- ================= TELUGU SONG LINKS ================= -->
+    <div class="language-chips mt-4 text-center">
+
+      <span>Explore SPB Telugu music:</span>
+
+      <a
+        href="https://www.youtube.com/results?search_query=SPB+Telugu+melody+songs"
+        target="_blank"
+        rel="noopener">
+        Melodies
+      </a>
+
+      <a
+        href="https://www.youtube.com/results?search_query=SPB+Telugu+romantic+songs"
+        target="_blank"
+        rel="noopener">
+        Romantic Songs
+      </a>
+
+      <a
+        href="https://www.youtube.com/results?search_query=SPB+Telugu+devotional+songs"
+        target="_blank"
+        rel="noopener">
+        Devotional Songs
+      </a>
+
+      <a
+        href="https://www.youtube.com/results?search_query=SPB+Telugu+old+classical+hits"
+        target="_blank"
+        rel="noopener">
+        Old Classics
+      </a>
+
+    </div>
+
+  </div>
+</section>
+
+<!-- ================= END OF MUSIC PLAYER AND TELUGU PLAYLIST ================= -->
 
 
 <!-- ================= PHOTO GALLERY ================= -->

@@ -77,31 +77,27 @@ songRows.forEach(row => {
 });
 
 
-/* =========================================
-   SEARCH THE PLAYLIST
-   ========================================= */
+// ================= TELUGU PLAYLIST SEARCH =================
 
 const songSearch = document.getElementById("songSearch");
+const songrows = document.querySelectorAll("#songList .song-row");
 
-songSearch.addEventListener("input", event => {
+songSearch.addEventListener("input", function () {
+  const searchText = this.value.trim().toLowerCase();
 
-  // Read the search box.
-  const term = event.target.value
-    .trim()
-    .toLowerCase();
+  songRows.forEach(function (song) {
+    const title = song.dataset.title || "";
+    const language = song.dataset.language || "";
 
-  // Show only songs matching the search.
-  songRows.forEach(row => {
+    const matches = `${title} ${language}`
+      .toLowerCase()
+      .includes(searchText);
 
-    const searchableText =
-      `${row.dataset.title} ${row.dataset.language}`
-        .toLowerCase();
-
-    row.hidden = !searchableText.includes(term);
-
+    song.hidden = !matches;
   });
-
 });
+
+// ================= END OF TELUGU PLAYLIST SEARCH =================
 
 
 /* =========================================
