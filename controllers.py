@@ -1,4 +1,4 @@
-from database import get_db
+from database1 import get_db
 from model import FoodOrders,FoodResponseModel
 from fastapi import APIRouter,Depends
 from sqlalchemy import select
