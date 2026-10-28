@@ -21,7 +21,7 @@ def get_orders(db=Depends(get_db)):
         "data": db_food
     }
 
-@router.get("/v1/orders")
+@router.get("/v1/orders/{id}")
 def get_order(id:int,db=Depends(get_db)):
     db_food=db.get(FoodOrders,id)
     if db_food is None:
@@ -29,3 +29,27 @@ def get_order(id:int,db=Depends(get_db)):
     return {
         "data":db_food
     }
+@router.put("/v1/orders/{id}")
+def update_orders(id:int,food:FoodResponseModel,db=Depends(get_db)):
+    db_food=db.get(FoodOrders,id)
+    if db_food is None:
+        raise HTTPException(status_code=404,detail="order not found")
+    db_food.customer_name = food.customer_name
+    db_food.food_item=food.food_item
+    db_food.quantity=food.quantity
+    db_food,price=food.price
+    db.commit()
+    db.refresh(db_food)
+    return {
+        "msg":"updated successfully",
+    }
+@router.delete("/v1/orders/{id}")
+def delete(id:int,db=Depends(get_db)):
+    db_food=db.get(FoodOrders,id)
+    if db_food is None:
+        raise HTTPException(status_code=404,detail="order not found")
+    db.delete(db_food)
+    db.commit()
+    return {
+        "msg": "order deleted successfully"
+        }
