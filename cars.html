@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>AUTOVERSE 2026 | Ultimate Car World</title>
+
+    <meta name="description" content="Explore sports cars, electric cars, Formula 1, luxury cars, SUVs and classic cars at AUTOVERSE 2026.">
+
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800&family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+
+<body>
+
+    <!-- LOADING SCREEN -->
+    <div class="loader" id="loader">
+        <div class="loader-car">
+            <i class="fa-solid fa-car-side"></i>
+        </div>
+        <h2>AUTOVERSE</h2>
+        <p>START YOUR ENGINE...</p>
+    </div>
+
+    <!-- NAVIGATION -->
+    <header class="header" id="header">
+
+        <a href="#home" class="logo">
+            <i class="fa-solid fa-gauge-high"></i>
+            AUTO<span>VERSE</span>
+        </a>
+
+        <nav class="navbar" id="navbar">
+            <a href="#home">Home</a>
+            <a href="#categories">Categories</a>
+            <a href="#cars">Cars</a>
+            <a href="#gallery">Gallery</a>
+            <a href="#formula1">Formula 1</a>
+            <a href="#about">About</a>
+            <a href="#contact">Contact</a>
+        </nav>
+
+        <div class="header-actions">
+            <button class="search-toggle" id="searchToggle" aria-label="Focus car search">
+                <i class="fa-solid fa-magnifying-glass"></i>
+            </button>
+
+            <button class="menu-toggle" id="menuToggle" aria-label="Open menu">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </div>
+
+    </header>
+
+    <!-- HERO SECTION -->
+    <section class="hero" id="home">
+
+        <div class="hero-overlay"></div>
+
+        <div class="hero-content reveal">
+
+            <p class="hero-small">
+                <span></span> THE FUTURE OF AUTOMOBILES
+            </p>
+
+            <h1>
+                DRIVE YOUR
+                <span>DREAMS</span>
+            </h1>
+
+            <p class="hero-description">
+                Explore the world of extraordinary automobiles.
+                From legendary supercars to futuristic electric
+                vehicles and Formula 1 machines.
+            </p>
+
+            <div class="hero-buttons">
+                <a href="#cars" class="btn btn-primary">
+                    Explore Cars <i class="fa-solid fa-arrow-right"></i>
+                </a>
+
+                <a href="#gallery" class="btn btn-outline">
+                    View Gallery
+                </a>
+            </div>
+
+            <div class="hero-stats">
+                <div>
+                    <h3>120+</h3>
+                    <p>Car Listings</p>
+                </div>
+
+                <div>
+                    <h3>6</h3>
+                    <p>Categories</p>
+                </div>
+
+                <div>
+                    <h3>2026</h3>
+                    <p>Edition</p>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="scroll-down">
+            <a href="#categories">
+                <i class="fa-solid fa-chevron-down"></i>
+                SCROLL TO EXPLORE
+            </a>
+        </div>
+
+    </section>
+
+    <!-- INTRODUCTION -->
+    <section class="intro section-padding">
+
+        <div class="intro-image reveal">
+            <img
+                src="https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?auto=format&fit=crop&w=1200&q=85"
+                alt="Modern automobile">
+            <div class="image-label">
+                <h3>THE ART OF DRIVING</h3>
+                <p>Performance meets perfection</p>
+            </div>
+        </div>
+
+        <div class="intro-text reveal">
+            <p class="section-tag">WELCOME TO AUTOVERSE</p>
+
+            <h2>
+                MORE THAN
+                <span>JUST CARS.</span>
+            </h2>
+
+            <p>
+                Cars represent innovation, freedom, engineering
+                and passion. AUTOVERSE brings the automotive
+                universe together in one place.
+            </p>
+
+            <p>
+                Discover breathtaking supercars, powerful SUVs,
+                futuristic EVs, iconic classics and the thrilling
+                world of Formula 1.
+            </p>
+
+            <a href="#about" class="text-link">
+                Discover Our World
+                <i class="fa-solid fa-arrow-right"></i>
+            </a>
+        </div>
+
+    </section>
+
+    <!-- CATEGORIES -->
+    <section class="categories section-padding" id="categories">
+
+        <div class="section-heading reveal">
+            <p class="section-tag">EXPLORE THE AUTOMOTIVE WORLD</p>
+            <h2>OUR <span>CATEGORIES</span></h2>
+            <p>Choose your favourite world of automobiles.</p>
+        </div>
+
+        <div class="category-grid">
+
+            <a href="#cars" class="category-card reveal" data-category-link="sports">
+                <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=900&q=80" alt="Sports cars">
+                <div class="category-info">
+                    <i class="fa-solid fa-flag-checkered"></i>
+                    <h3>Sports Cars</h3>
+                    <p>Speed and performance</p>
+                    <span>EXPLORE <i class="fa-solid fa-arrow-right"></i></span>
+                </div>
+            </a>
+
+            <a href="#cars" class="category-card reveal" data-category-link="electric">
+                <img src="https://images.unsplash.com/photo-1560958089-b8a1929cea89?auto=format&fit=crop&w=900&q=80" alt="Electric cars">
+                <div class="category-info">
+                    <i class="fa-solid fa-bolt"></i>
+                    <h3>Electric Cars</h3>
+                    <p>Future is electric</p>
+                    <span>EXPLORE <i class="fa-solid fa-arrow-right"></i></span>
+                </div>
+            </a>
+
+            <a href="#cars" class="category-card reveal" data-category-link="f1">
+                <img src="https://images.unsplash.com/photo-1532906619279-a4b7267faa66?auto=format&fit=crop&w=900&q=80" alt="Racing cars">
+                <div class="category-info">
+                    <i class="fa-solid fa-flag"></i>
+                    <h3>Formula 1</h3>
+                    <p>Born for racing</p>
+                    <span>EXPLORE <i class="fa-solid fa-arrow-right"></i></span>
+                </div>
+            </a>
+
+            <a href="#cars" class="category-card reveal" data-category-link="luxury">
+                <img src="https://images.unsplash.com/photo-1618843479313-40f8afb4b4d8?auto=format&fit=crop&w=900&q=80" alt="Luxury cars">
+                <div class="category-info">
+                    <i class="fa-solid fa-gem"></i>
+                    <h3>Luxury Cars</h3>
+                    <p>Elegance and comfort</p>
+                    <span>EXPLORE <i class="fa-solid fa-arrow-right"></i></span>
+                </div>
+            </a>
+
+            <a href="#cars" class="category-card reveal" data-category-link="suv">
+                <img src="https://images.unsplash.com/photo-1519641471654-76ce0107ad1b?auto=format&fit=crop&w=900&q=80" alt="SUV cars">
+                <div class="category-info">
+                    <i class="fa-solid fa-truck-monster"></i>
+                    <h3>SUVs</h3>
+                    <p>Power and adventure</p>
+                    <span>EXPLORE <i class="fa-solid fa-arrow-right"></i></span>
+                </div>
+            </a>
+
+            <a href="#cars" class="category-card reveal" data-category-link="classic">
+                <img src="https://images.unsplash.com/photo-1503736334956-4c8f8e92946d?auto=format&fit=crop&w=900&q=80" alt="Classic cars">
+                <div class="category-info">
+                    <i class="fa-solid fa-clock-rotate-left"></i>
+                    <h3>Classic Cars</h3>
+                    <p>Legends never die</p>
+                    <span>EXPLORE <i class="fa-solid fa-arrow-right"></i></span>
+                </div>
+            </a>
+
+        </div>
+
+    </section>
+
+    <!-- CAR COLLECTION -->
+    <section class="cars-section section-padding" id="cars">
+
+        <div class="section-heading reveal">
+            <p class="section-tag">THE ULTIMATE COLLECTION</p>
+            <h2>EXPLORE <span>OUR CARS</span></h2>
+            <p>Discover 120 automotive legends across six categories.</p>
+        </div>
+
+        <div class="car-search reveal">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <input type="text" id="carSearch"
+            placeholder="Search car name or brand...">
+        </div>
+
+        <div class="filter-buttons reveal" id="filterButtons">
+            <button class="filter-btn active" data-filter="all">All Cars</button>
+            <button class="filter-btn" data-filter="sports">Sports Cars</button>
+            <button class="filter-btn" data-filter="electric">Electric</button>
+            <button class="filter-btn" data-filter="f1">Formula 1</button>
+            <button class="filter-btn" data-filter="luxury">Luxury</button>
+            <button class="filter-btn" data-filter="suv">SUVs</button>
+            <button class="filter-btn" data-filter="classic">Classics</button>
+        </div>
+
+        <div class="results-info">
+            <p id="resultsCount">Loading cars...</p>
+        </div>
+
+        <div class="car-grid" id="carGrid">
+            <!-- JavaScript adds all 120 cars here -->
+        </div>
+
+        <p class="empty-message" id="emptyMessage">
+            No cars found. Try another search.
+        </p>
+
+    </section>
+
+    <!-- FEATURE SECTION -->
+    <section class="electric-feature section-padding">
+
+        <div class="feature-image reveal">
+            <img src="https://images.unsplash.com/photo-1560958089-b8a1929cea89?auto=format&fit=crop&w=1200&q=85" alt="Electric vehicle">
+        </div>
+
+        <div class="feature-content reveal">
+            <p class="section-tag">THE NEXT GENERATION</p>
+            <h2>THE FUTURE IS <span>ELECTRIC</span></h2>
+
+            <p>
+                Electric vehicles are transforming the automotive
+                industry with innovative technology, instant torque,
+                quieter driving and new approaches to sustainability.
+            </p>
+
+            <a href="#cars" class="btn btn-primary"
+            data-jump-category="electric">
+                Explore Electric Cars
+                <i class="fa-solid fa-arrow-right"></i>
+            </a>
+        </div>
+
+    </section>
+
+    <!-- FORMULA 1 -->
+    <section class="formula-section section-padding" id="formula1">
+
+        <div class="f1-background"></div>
+
+        <div class="section-heading reveal">
+            <p class="section-tag">THE PINNACLE OF MOTORSPORT</p>
+            <h2>FORMULA <span>1</span></h2>
+            <p>Engineering, speed, strategy and racing excellence.</p>
+        </div>
+
+        <div class="f1-content">
+
+            <div class="f1-image reveal">
+                <img src="https://images.unsplash.com/photo-1532906619279-a4b7267faa66?auto=format&fit=crop&w=1200&q=85" alt="Formula racing">
+            </div>
+
+            <div class="f1-text reveal">
+                <h3>ENGINEERED TO WIN</h3>
+
+                <p>
+                    Formula 1 is a world of advanced aerodynamics,
+                    precision engineering, elite drivers and
+                    extraordinary competition.
+                </p>
+
+                <ul>
+                    <li><i class="fa-solid fa-check"></i> Advanced aerodynamics</li>
+                    <li><i class="fa-solid fa-check"></i> Hybrid power units</li>
+                    <li><i class="fa-solid fa-check"></i> High-performance engineering</li>
+                    <li><i class="fa-solid fa-check"></i> Global racing circuits</li>
+                </ul>
+
+                <a href="#cars" class="btn btn-primary"
+                data-jump-category="f1">
+                    Explore Racing Cars
+                </a>
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- TECHNOLOGY -->
+    <section class="technology section-padding" id="technology">
+
+        <div class="section-heading reveal">
+            <p class="section-tag">INNOVATION NEVER STOPS</p>
+            <h2>AUTOMOTIVE <span>TECHNOLOGY</span></h2>
+            <p>The innovations shaping tomorrow's vehicles.</p>
+        </div>
+
+        <div class="technology-grid">
+
+            <div class="technology-card reveal">
+                <i class="fa-solid fa-battery-full"></i>
+                <h3>Electric Power</h3>
+                <p>Battery technology and electric mobility.</p>
+            </div>
+
+            <div class="technology-card reveal">
+                <i class="fa-solid fa-microchip"></i>
+                <h3>Smart Technology</h3>
+                <p>Connected cars and intelligent software.</p>
+            </div>
+
+            <div class="technology-card reveal">
+                <i class="fa-solid fa-shield-halved"></i>
+                <h3>Safety Systems</h3>
+                <p>Advanced driver assistance and safety features.</p>
+            </div>
+
+            <div class="technology-card reveal">
+                <i class="fa-solid fa-wind"></i>
+                <h3>Aerodynamics</h3>
+                <p>Designs engineered to improve efficiency.</p>
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- GALLERY -->
+    <section class="gallery-section section-padding" id="gallery">
+
+        <div class="section-heading reveal">
+            <p class="section-tag">AUTOMOTIVE PHOTOGRAPHY</p>
+            <h2>CAR <span>GALLERY</span></h2>
+            <p>Explore the beauty of automotive design.</p>
+        </div>
+
+        <div class="gallery-filters reveal">
+            <button class="gallery-filter active" data-gallery="all">All</button>
+            <button class="gallery-filter" data-gallery="sports">Sports</button>
+            <button class="gallery-filter" data-gallery="electric">Electric</button>
+            <button class="gallery-filter" data-gallery="f1">Formula 1</button>
+            <button class="gallery-filter" data-gallery="luxury">Luxury</button>
+            <button class="gallery-filter" data-gallery="suv">SUV</button>
+            <button class="gallery-filter" data-gallery="classic">Classic</button>
+        </div>
+
+        <div class="gallery-grid" id="galleryGrid">
+            <!-- JavaScript adds gallery photos here -->
+        </div>
+
+    </section>
+
+    <!-- ABOUT -->
+    <section class="about-section section-padding" id="about">
+
+        <div class="about-content reveal">
+            <p class="section-tag">WHO WE ARE</p>
+
+            <h2>WELCOME TO <span>AUTOVERSE</span></h2>
+
+            <p>
+                AUTOVERSE is an automotive discovery website
+                created for people who love cars, engineering,
+                motorsport and innovative technology.
+            </p>
+
+            <p>
+                Our goal is to bring different types of vehicles
+                together in one exciting digital destination.
+                Explore the machines, learn about automotive
+                technology and enjoy the world of driving.
+            </p>
+
+            <a href="#contact" class="btn btn-primary">
+                Contact Us
+            </a>
+        </div>
+
+        <div class="about-image reveal">
+            <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1200&q=85" alt="Automotive design">
+        </div>
+
+    </section>
+
+    <!-- CONTACT -->
+    <section class="contact-section section-padding" id="contact">
+
+        <div class="section-heading reveal">
+            <p class="section-tag">GET IN TOUCH</p>
+            <h2>CONTACT <span>US</span></h2>
+            <p>Have a question or suggestion? Send us a message.</p>
+        </div>
+
+        <form id="contactForm" class="contact-form reveal">
+
+            <div class="form-row">
+                <input type="text" id="contactName"
+                placeholder="Your name" required>
+
+                <input type="email" id="contactEmail"
+                placeholder="Your email" required>
+            </div>
+
+            <input type="text" id="contactSubject"
+            placeholder="Subject" required>
+
+            <textarea id="contactMessage"
+            placeholder="Your message..." rows="6" required></textarea>
+
+            <button type="submit" class="btn btn-primary">
+                Send Message <i class="fa-solid fa-paper-plane"></i>
+            </button>
+
+            <p id="contactFeedback" class="form-feedback"></p>
+
+        </form>
+
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+
+        <div class="footer-grid">
+
+            <div class="footer-about">
+                <a href="#home" class="logo">
+                    <i class="fa-solid fa-gauge-high"></i>
+                    AUTO<span>VERSE</span>
+                </a>
+
+                <p>
+                    Explore the extraordinary world of automobiles.
+                    Speed, innovation, design and passion.
+                </p>
+
+                <div class="social-links">
+                    <a href="https://www.instagram.com/" target="_blank" rel="noopener" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="https://www.facebook.com/" target="_blank" rel="noopener" aria-label="Facebook"><i class="fa-brands fa-facebook"></i></a>
+                    <a href="https://www.youtube.com/" target="_blank" rel="noopener" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+                </div>
+            </div>
+
+            <div class="footer-links">
+                <h3>Quick Links</h3>
+                <a href="#home">Home</a>
+                <a href="#categories">Categories</a>
+                <a href="#cars">Cars</a>
+                <a href="#gallery">Gallery</a>
+                <a href="#about">About</a>
+            </div>
+
+            <div class="footer-links">
+                <h3>Car Categories</h3>
+                <a href="#cars" data-footer-category="sports">Sports Cars</a>
+                <a href="#cars" data-footer-category="electric">Electric Cars</a>
+                <a href="#cars" data-footer-category="f1">Formula 1</a>
+                <a href="#cars" data-footer-category="luxury">Luxury Cars</a>
+                <a href="#cars" data-footer-category="suv">SUVs</a>
+                <a href="#cars" data-footer-category="classic">Classic Cars</a>
+            </div>
+
+            <div class="footer-links">
+                <h3>Explore</h3>
+                <a href="#technology">Technology</a>
+                <a href="#formula1">Motorsport</a>
+                <a href="#contact">Contact Us</a>
+            </div>
+
+        </div>
+
+        <div class="footer-bottom">
+            <p>© <span id="currentYear"></span> AUTOVERSE. All Rights Reserved.</p>
+            <a href="#home">Back to Top ↑</a>
+        </div>
+
+    </footer>
+
+    <!-- IMAGE LIGHTBOX -->
+    <div class="lightbox" id="lightbox">
+        <button id="closeLightbox" aria-label="Close image">
+            <i class="fa-solid fa-xmark"></i>
+        </button>
+
+        <img src="" alt="Selected car" id="lightboxImage">
+        <p id="lightboxCaption"></p>
+    </div>
+
+    <!-- BACK TO TOP -->
+    <button class="back-to-top" id="backToTop" aria-label="Back to top">
+        <i class="fa-solid fa-arrow-up"></i>
+    </button>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
