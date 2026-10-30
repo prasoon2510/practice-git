@@ -1,85 +1,154 @@
 
-/* ==================================================
-   GALLERY LIGHTBOX
-================================================== */
+/* ADDITIONAL AUTOVERSE STYLING */
 
-.image-lightbox {
-  position: fixed;
-  inset: 0;
-  z-index: 2000;
-  background: rgba(0, 0, 0, 0.94);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  padding: 35px;
-  opacity: 0;
-  visibility: hidden;
-  transition: 0.3s;
+/* Entrance animations */
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(25px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
-.image-lightbox.active {
-  opacity: 1;
-  visibility: visible;
+.hero-content {
+    animation: fadeInUp 1s ease both;
 }
 
-.image-lightbox img {
-  max-width: 90%;
-  max-height: 78vh;
-  object-fit: contain;
-  border-radius: 8px;
-  border: 1px solid #ffffff30;
+/* Navigation underline */
+
+.nav-links a {
+    position: relative;
 }
 
-.lightbox-caption {
-  color: white;
-  font-family: "Orbitron", sans-serif;
-  font-size: 12px;
-  letter-spacing: 2px;
-  margin-top: 18px;
+.nav-links a::after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -7px;
+    left: 0;
+    background: var(--accent);
+    transition: width 0.3s ease;
 }
 
-.lightbox-close {
-  position: absolute;
-  top: 25px;
-  right: 35px;
-  background: var(--red);
-  color: white;
-  border: none;
-  width: 45px;
-  height: 45px;
-  border-radius: 50%;
-  font-size: 28px;
-  cursor: pointer;
+.nav-links a:hover::after {
+    width: 100%;
 }
 
-/* ==================================================
-   SCROLL REVEAL ANIMATION
-================================================== */
+/* Car card effects */
 
-.reveal {
-  opacity: 0;
-  transform: translateY(25px);
-  transition: opacity 0.7s ease, transform 0.7s ease;
+.car-card {
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
 }
 
-.reveal.revealed {
-  opacity: 1;
-  transform: translateY(0);
+.car-card:hover {
+    box-shadow: 0 18px 40px rgba(229,166,59,0.12);
 }
 
-@media (max-width: 600px) {
-  .image-lightbox {
-    padding: 15px;
-  }
+.car-image::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        to top,
+        rgba(0,0,0,0.25),
+        transparent 60%
+    );
+    pointer-events: none;
+}
 
-  .image-lightbox img {
-    max-width: 100%;
-    max-height: 70vh;
-  }
+/* Statistics animation */
 
-  .lightbox-close {
-    top: 15px;
-    right: 15px;
-  }
+.stat h2 {
+    transition: transform 0.3s ease;
+}
+
+.stat:hover h2 {
+    transform: scale(1.12);
+}
+
+/* Button effects */
+
+.primary-button,
+.secondary-button,
+.nav-button {
+    transition: all 0.3s ease;
+}
+
+.primary-button:active,
+.secondary-button:active,
+.nav-button:active {
+    transform: scale(0.97);
+}
+
+/* Form focus effects */
+
+.contact-form input,
+.contact-form select,
+.contact-form textarea {
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.contact-form input:focus,
+.contact-form select:focus,
+.contact-form textarea:focus {
+    box-shadow: 0 0 0 3px rgba(229,166,59,0.12);
+}
+
+/* About image */
+
+.about-image img {
+    transition: transform 0.6s ease;
+}
+
+.about-image:hover img {
+    transform: scale(1.04);
+}
+
+/* Footer links */
+
+.footer-links a {
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.footer-links a:hover {
+    transform: translateY(-3px);
+}
+
+/* Text selection */
+
+::selection {
+    background: var(--accent);
+    color: #111;
+}
+
+/* Keyboard accessibility */
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 4px;
+}
+
+/* Small screen adjustment */
+
+@media (max-width: 400px) {
+    .hero h1 {
+        font-size: 38px;
+    }
+
+    .hero-bottom span:last-child {
+        display: none;
+    }
+
+    .logo {
+        font-size: 18px;
+    }
 }
