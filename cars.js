@@ -1,794 +1,408 @@
-/* ==========================================
-   AUTOVERSE 2026 - JAVASCRIPT
-========================================== */
 
-// 1. IMAGE COLLECTION
-// These are externally hosted Unsplash photographs.
-// Some photos are representative rather than exact model photos.
+// ==================================================
+// AUTOVERSE 2026 - JAVASCRIPT
+// ==================================================
 
-const carPhotos = [
-    "https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?auto=format&fit=crop&w=900&q=80",
-    "https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=900&q=80",
-    "https://images.unsplash.com/photo-1503736334956-4c8f8e92946d?auto=format&fit=crop&w=900&q=80",
-    "https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?auto=format&fit=crop&w=900&q=80",
-    "https://images.unsplash.com/photo-1552519507-da3b142c6e3d?auto=format&fit=crop&w=900&q=80",
-    "https://images.unsplash.com/photo-1555215695-3004980ad54e?auto=format&fit=crop&w=900&q=80",
-    "https://images.unsplash.com/photo-1618843479313-40f8afb4b4d8?auto=format&fit=crop&w=900&q=80",
-    "https://images.unsplash.com/photo-1560958089-b8a1929cea89?auto=format&fit=crop&w=900&q=80",
-    "https://images.unsplash.com/photo-1519641471654-76ce0107ad1b?auto=format&fit=crop&w=900&q=80",
-    "https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?auto=format&fit=crop&w=900&q=80",
-    "https://images.unsplash.com/photo-1504215680853-026ed2a45def?auto=format&fit=crop&w=900&q=80",
-    "https://images.unsplash.com/photo-1541899481282-d53bffe3c35d?auto=format&fit=crop&w=900&q=80",
-    "https://images.unsplash.com/photo-1489824904134-891ab64532f1?auto=format&fit=crop&w=900&q=80",
-    "https://images.unsplash.com/photo-1494976388531-d1058494cdd8?auto=format&fit=crop&w=900&q=80",
-    "https://images.unsplash.com/photo-1507136566006-cfc505b114fc?auto=format&fit=crop&w=900&q=80",
-    "https://images.unsplash.com/photo-1511919884226-fd3cad34687c?auto=format&fit=crop&w=900&q=80",
-    "https://images.unsplash.com/photo-1542362567-b07e54358753?auto=format&fit=crop&w=900&q=80",
-    "https://images.unsplash.com/photo-1558981806-ec527fa84c39?auto=format&fit=crop&w=900&q=80",
-    "https://images.unsplash.com/photo-1525609004556-c46c7d6cf023?auto=format&fit=crop&w=900&q=80",
-    "https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?auto=format&fit=crop&w=900&q=80"
-];
 
-
-// 2. CAR DATABASE
-// Each category has 20 vehicles.
-
-const categories = {
-
-    sports: {
-        label: "SPORTS CAR",
-        cars: [
-            "Ferrari 296 GTB",
-            "Lamborghini Revuelto",
-            "Porsche 911 GT3 RS",
-            "McLaren 750S",
-            "Chevrolet Corvette Z06",
-            "Aston Martin Vantage",
-            "Nissan GT-R",
-            "Toyota GR Supra",
-            "Ford Mustang GT",
-            "Mercedes-AMG GT",
-            "BMW M4 Competition",
-            "Audi R8",
-            "Lexus LC 500",
-            "Jaguar F-Type",
-            "Maserati MC20",
-            "Lotus Emira",
-            "Alpine A110",
-            "Dodge Challenger",
-            "Porsche 718 Cayman",
-            "Ferrari F8 Tributo"
-        ]
-    },
-
-    electric: {
-        label: "ELECTRIC CAR",
-        cars: [
-            "Tesla Model S",
-            "Tesla Model 3",
-            "Tesla Model Y",
-            "Porsche Taycan",
-            "Hyundai IONIQ 5",
-            "Kia EV6",
-            "BMW i4",
-            "BMW iX",
-            "Mercedes EQS",
-            "Audi Q8 e-tron",
-            "Rivian R1T",
-            "Lucid Air",
-            "BYD Seal",
-            "BYD Atto 3",
-            "Tata Nexon EV",
-            "Tata Punch EV",
-            "Mahindra BE 6",
-            "Mahindra XEV 9e",
-            "Volvo EX30",
-            "Rolls-Royce Spectre"
-        ]
-    },
-
-    f1: {
-        label: "FORMULA 1",
-        cars: [
-            "Ferrari SF-26",
-            "Mercedes F1 Car",
-            "Red Bull Racing Car",
-            "McLaren F1 Car",
-            "Aston Martin F1 Car",
-            "Alpine F1 Car",
-            "Williams F1 Car",
-            "Haas F1 Car",
-            "Audi F1 Car",
-            "Cadillac F1 Car",
-            "Ferrari SF-25",
-            "McLaren MCL39",
-            "Red Bull RB21",
-            "Mercedes W16",
-            "Aston Martin AMR25",
-            "Alpine A525",
-            "Williams FW47",
-            "Haas VF-25",
-            "Sauber C45",
-            "AlphaTauri AT04"
-        ]
-    },
-
-    luxury: {
-        label: "LUXURY CAR",
-        cars: [
-            "Rolls-Royce Phantom",
-            "Rolls-Royce Ghost",
-            "Rolls-Royce Cullinan",
-            "Bentley Continental GT",
-            "Bentley Flying Spur",
-            "Mercedes-Maybach S-Class",
-            "Mercedes-Benz S-Class",
-            "BMW 7 Series",
-            "BMW i7",
-            "Audi A8 L",
-            "Lexus LS",
-            "Range Rover SV",
-            "Porsche Panamera",
-            "Maserati Quattroporte",
-            "Aston Martin DB12",
-            "Ferrari Roma",
-            "Lamborghini Urus",
-            "Genesis G90",
-            "Cadillac Celestiq",
-            "Lucid Air Sapphire"
-        ]
-    },
-
-    suv: {
-        label: "SUV",
-        cars: [
-            "Range Rover Sport",
-            "Land Rover Defender",
-            "Toyota Land Cruiser",
-            "Toyota Fortuner",
-            "Jeep Wrangler",
-            "Jeep Grand Cherokee",
-            "BMW X5",
-            "BMW X7",
-            "Mercedes-Benz G-Class",
-            "Mercedes GLE",
-            "Audi Q7",
-            "Audi Q8",
-            "Porsche Cayenne",
-            "Lamborghini Urus",
-            "Ferrari Purosangue",
-            "Volvo XC90",
-            "Hyundai Tucson",
-            "Kia EV9",
-            "Mahindra Scorpio-N",
-            "Tata Safari"
-        ]
-    },
-
-    classic: {
-        label: "CLASSIC CAR",
-        cars: [
-            "Ford Mustang 1967",
-            "Chevrolet Camaro 1969",
-            "Jaguar E-Type",
-            "Mercedes-Benz 300SL",
-            "Porsche 356",
-            "Porsche 911 Classic",
-            "Ferrari 250 GTO",
-            "Aston Martin DB5",
-            "Volkswagen Beetle",
-            "Mini Cooper Classic",
-            "Dodge Charger 1969",
-            "Ford GT40",
-            "Shelby Cobra",
-            "Lamborghini Miura",
-            "Maserati Ghibli Classic",
-            "Rolls-Royce Silver Shadow",
-            "Cadillac Eldorado",
-            "Toyota 2000GT",
-            "Nissan Skyline GT-R R34",
-            "BMW 2002"
-        ]
-    }
-
-};
-
-
-// 3. GENERATE ALL CAR CARDS
-
-const carGrid = document.getElementById("carGrid");
-const resultsCount = document.getElementById("resultsCount");
-const emptyMessage = document.getElementById("emptyMessage");
-
-let allCars = [];
-
-Object.entries(categories).forEach(([category, details]) => {
-
-    details.cars.forEach((carName, index) => {
-
-        allCars.push({
-            name: carName,
-            category: category,
-            label: details.label,
-            image: carPhotos[index % carPhotos.length]
-        });
-
-    });
-
-});
-
-
-function displayCars(carList) {
-
-    carGrid.innerHTML = "";
-
-    resultsCount.textContent =
-        `Showing ${carList.length} cars`;
-
-    emptyMessage.style.display =
-        carList.length === 0 ? "block" : "none";
-
-    carList.forEach((car, index) => {
-
-        const card = document.createElement("article");
-
-        card.className = "car-card";
-
-        card.innerHTML = `
-            <div class="car-image">
-                <img
-                    src="${car.image}"
-                    alt="${car.name}"
-                    loading="lazy"
-                >
-
-                <span class="car-category">
-                    ${car.label}
-                </span>
-            </div>
-
-            <div class="car-details">
-
-                <h3>${car.name}</h3>
-
-                <p>
-                    Discover the design, engineering
-                    and automotive character of the
-                    ${car.name}.
-                </p>
-
-                <div class="car-card-footer">
-
-                    <span>
-                        <i class="fa-solid fa-car"></i>
-                        ${car.category.toUpperCase()}
-                    </span>
-
-                    <button
-                        class="view-car"
-                        type="button"
-                        data-car-name="${car.name}"
-                        data-car-image="${car.image}"
-                    >
-                        VIEW PHOTO
-                        <i class="fa-solid fa-arrow-right"></i>
-                    </button>
-
-                </div>
-
-            </div>
-        `;
-
-        card.style.animationDelay = `${(index % 6) * 60}ms`;
-
-        carGrid.appendChild(card);
-
-    });
-
-}
-
-
-// Display all cars when the website loads.
-
-displayCars(allCars);
-
-
-// 4. CATEGORY FILTER BUTTONS
-
-const filterButtons =
-    document.querySelectorAll(".filter-btn");
-
-let currentCategory = "all";
-
-
-function filterCars(category) {
-
-    currentCategory = category;
-
-    filterButtons.forEach(button => {
-
-        button.classList.toggle(
-            "active",
-            button.dataset.filter === category
-        );
-
-    });
-
-    const searchValue =
-        document.getElementById("carSearch")
-        .value.toLowerCase().trim();
-
-    const filteredCars = allCars.filter(car => {
-
-        const matchesCategory =
-            category === "all" || car.category === category;
-
-        const matchesSearch =
-            car.name.toLowerCase().includes(searchValue) ||
-            car.category.toLowerCase().includes(searchValue);
-
-        return matchesCategory && matchesSearch;
-
-    });
-
-    displayCars(filteredCars);
-
-}
-
-
-filterButtons.forEach(button => {
-
-    button.addEventListener("click", () => {
-
-        filterCars(button.dataset.filter);
-
-    });
-
-});
-
-
-// 5. SEARCH CARS
+// ==================================================
+// 1. CAR SEARCH AND CATEGORY FILTER
+// ==================================================
 
 const carSearch = document.getElementById("carSearch");
 
-carSearch.addEventListener("input", () => {
+const carItems = document.querySelectorAll(".car-item");
 
-    const searchValue =
-        carSearch.value.toLowerCase().trim();
+const filterButtons = document.querySelectorAll(
+  ".featured-section .filter-btn"
+);
 
-    const filteredCars = allCars.filter(car => {
+const noCarsMessage = document.getElementById("noCarsMessage");
 
-        const matchesCategory =
-            currentCategory === "all" ||
-            car.category === currentCategory;
+let selectedCategory = "all";
 
-        const matchesSearch =
-            car.name.toLowerCase().includes(searchValue) ||
-            car.category.toLowerCase().includes(searchValue);
+function filterCars() {
 
-        return matchesCategory && matchesSearch;
+  const searchValue = carSearch.value
+    .trim()
+    .toLowerCase();
 
-    });
+  let visibleCount = 0;
 
-    displayCars(filteredCars);
+  carItems.forEach(function(car) {
 
-});
+    const carText = car.textContent.toLowerCase();
 
+    const categories = car.dataset.category || "";
 
-// 6. CATEGORY CARDS NAVIGATION
+    const matchesSearch =
+      carText.includes(searchValue);
 
-document.querySelectorAll("[data-category-link]")
-.forEach(link => {
+    const matchesCategory =
+      selectedCategory === "all" ||
+      categories.split(" ").includes(selectedCategory);
 
-    link.addEventListener("click", () => {
+    const shouldShow =
+      matchesSearch && matchesCategory;
 
-        const category = link.dataset.categoryLink;
+    car.hidden = !shouldShow;
 
-        filterCars(category);
+    if (shouldShow) {
+      visibleCount++;
+    }
 
-    });
+  });
 
-});
-
-
-// 7. FEATURE BUTTONS
-
-document.querySelectorAll("[data-jump-category]")
-.forEach(button => {
-
-    button.addEventListener("click", () => {
-
-        filterCars(button.dataset.jumpCategory);
-
-    });
-
-});
-
-
-// 8. FOOTER CATEGORY LINKS
-
-document.querySelectorAll("[data-footer-category]")
-.forEach(link => {
-
-    link.addEventListener("click", () => {
-
-        filterCars(link.dataset.footerCategory);
-
-    });
-
-});
-
-
-// 9. GALLERY PHOTOS
-
-const galleryGrid =
-    document.getElementById("galleryGrid");
-
-const galleryItems = [];
-
-
-Object.entries(categories).forEach(([category, details]) => {
-
-    details.cars.forEach((carName, index) => {
-
-        galleryItems.push({
-
-            name: carName,
-
-            category: category,
-
-            image: carPhotos[index % carPhotos.length]
-
-        });
-
-    });
-
-});
-
-
-function displayGallery(category = "all") {
-
-    galleryGrid.innerHTML = "";
-
-    const filteredItems = galleryItems.filter(item => {
-
-        return category === "all" ||
-            item.category === category;
-
-    });
-
-    filteredItems.forEach((item, index) => {
-
-        const galleryItem = document.createElement("div");
-
-        galleryItem.className = "gallery-item reveal visible";
-
-        galleryItem.dataset.category = item.category;
-
-        galleryItem.innerHTML = `
-
-            <img
-                src="${item.image}"
-                alt="${item.name}"
-                loading="lazy"
-            >
-
-        `;
-
-        galleryItem.addEventListener("click", () => {
-
-            openLightbox(item.image, item.name);
-
-        });
-
-        galleryGrid.appendChild(galleryItem);
-
-    });
+  noCarsMessage.hidden = visibleCount !== 0;
 
 }
 
 
-displayGallery();
+// Search cars when the user types.
+carSearch.addEventListener("input", filterCars);
 
 
-// 10. GALLERY FILTERS
+// Filter cars when category buttons are clicked.
+filterButtons.forEach(function(button) {
 
-const galleryFilters =
-    document.querySelectorAll(".gallery-filter");
+  button.addEventListener("click", function() {
 
-galleryFilters.forEach(button => {
-
-    button.addEventListener("click", () => {
-
-        galleryFilters.forEach(item =>
-            item.classList.remove("active")
-        );
-
-        button.classList.add("active");
-
-        displayGallery(button.dataset.gallery);
-
+    filterButtons.forEach(function(btn) {
+      btn.classList.remove("active");
     });
+
+    this.classList.add("active");
+
+    selectedCategory = this.dataset.filter;
+
+    filterCars();
+
+  });
 
 });
 
 
-// 11. LIGHTBOX IMAGE VIEWER
+// ==================================================
+// 2. GALLERY FILTER
+// ==================================================
 
-const lightbox = document.getElementById("lightbox");
-const lightboxImage = document.getElementById("lightboxImage");
-const lightboxCaption = document.getElementById("lightboxCaption");
-const closeLightbox = document.getElementById("closeLightbox");
+const galleryButtons = document.querySelectorAll(
+  ".gallery-filters .filter-btn"
+);
+
+const galleryItems = document.querySelectorAll(
+  ".gallery-item"
+);
+
+galleryButtons.forEach(function(button) {
+
+  button.addEventListener("click", function() {
+
+    galleryButtons.forEach(function(btn) {
+      btn.classList.remove("active");
+    });
+
+    this.classList.add("active");
+
+    const selected = this.dataset.galleryFilter;
+
+    galleryItems.forEach(function(item) {
+
+      const category = item.dataset.galleryCategory;
+
+      const shouldShow =
+        selected === "all" || category === selected;
+
+      item.hidden = !shouldShow;
+
+    });
+
+  });
+
+});
 
 
-function openLightbox(image, name) {
+// ==================================================
+// 3. GALLERY IMAGE LIGHTBOX
+// ==================================================
 
-    lightboxImage.src = image;
+const lightbox = document.createElement("div");
 
-    lightboxCaption.textContent = name;
+lightbox.className = "image-lightbox";
 
-    lightbox.classList.add("show");
+lightbox.innerHTML = `
+  <button class="lightbox-close" aria-label="Close image">
+    &times;
+  </button>
+
+  <img src="" alt="Enlarged car photograph">
+
+  <p class="lightbox-caption"></p>
+`;
+
+document.body.appendChild(lightbox);
+
+const lightboxImage = lightbox.querySelector("img");
+
+const lightboxCaption =
+  lightbox.querySelector(".lightbox-caption");
+
+const lightboxClose =
+  lightbox.querySelector(".lightbox-close");
+
+galleryItems.forEach(function(item) {
+
+  item.addEventListener("click", function() {
+
+    const image = item.querySelector("img");
+
+    lightboxImage.src = image.src;
+
+    lightboxImage.alt = image.alt;
+
+    lightboxCaption.textContent =
+      item.querySelector("span").textContent;
+
+    lightbox.classList.add("active");
 
     document.body.style.overflow = "hidden";
 
+  });
+
+});
+
+
+function closeLightbox() {
+
+  lightbox.classList.remove("active");
+
+  document.body.style.overflow = "";
+
 }
 
+lightboxClose.addEventListener("click", closeLightbox);
 
-function hideLightbox() {
+lightbox.addEventListener("click", function(event) {
 
-    lightbox.classList.remove("show");
+  if (event.target === lightbox) {
+    closeLightbox();
+  }
 
-    document.body.style.overflow = "";
+});
 
-}
+document.addEventListener("keydown", function(event) {
+
+  if (event.key === "Escape") {
+    closeLightbox();
+  }
+
+});
 
 
-closeLightbox.addEventListener("click", hideLightbox);
+// ==================================================
+// 4. BACK TO TOP BUTTON
+// ==================================================
+
+const backToTop = document.getElementById("backToTop");
+
+window.addEventListener("scroll", function() {
+
+  if (window.scrollY > 400) {
+
+    backToTop.classList.add("show");
+
+  } else {
+
+    backToTop.classList.remove("show");
+
+  }
+
+});
+
+backToTop.addEventListener("click", function() {
+
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth"
+  });
+
+});
 
 
-lightbox.addEventListener("click", event => {
+// ==================================================
+// 5. MOBILE NAVIGATION
+// ==================================================
 
-    if (event.target === lightbox) {
+const navigationLinks = document.querySelectorAll(
+  "#mainNavigation .nav-link, #mainNavigation .nav-contact"
+);
 
-        hideLightbox();
+navigationLinks.forEach(function(link) {
+
+  link.addEventListener("click", function() {
+
+    const navigation =
+      document.getElementById("mainNavigation");
+
+    if (
+      navigation.classList.contains("show") &&
+      window.bootstrap
+    ) {
+
+      bootstrap.Collapse
+        .getOrCreateInstance(navigation)
+        .hide();
 
     }
 
-});
-
-
-document.addEventListener("keydown", event => {
-
-    if (event.key === "Escape") {
-
-        hideLightbox();
-
-    }
+  });
 
 });
 
 
-// 12. VIEW PHOTO BUTTONS
+// ==================================================
+// 6. CONTACT FORM
+// ==================================================
 
-carGrid.addEventListener("click", event => {
+const contactForm =
+  document.getElementById("contactForm");
 
-    const button = event.target.closest(".view-car");
+const contactFeedback =
+  document.getElementById("contactFeedback");
 
-    if (!button) return;
+contactForm.addEventListener("submit", function(event) {
 
-    openLightbox(
-        button.dataset.carImage,
-        button.dataset.carName
-    );
+  event.preventDefault();
 
-});
+  const name =
+    document.getElementById("contactName").value.trim();
 
+  const email =
+    document.getElementById("contactEmail").value.trim();
 
-// 13. MOBILE MENU
+  const subject =
+    document.getElementById("contactSubject").value.trim();
 
-const menuToggle =
-    document.getElementById("menuToggle");
-
-const navbar =
-    document.getElementById("navbar");
-
-
-menuToggle.addEventListener("click", () => {
-
-    navbar.classList.toggle("open");
-
-    const icon = menuToggle.querySelector("i");
-
-    if (navbar.classList.contains("open")) {
-
-        icon.classList.replace("fa-bars", "fa-xmark");
-
-    } else {
-
-        icon.classList.replace("fa-xmark", "fa-bars");
-
-    }
-
-});
+  const message =
+    document.getElementById("contactMessage").value.trim();
 
 
-navbar.querySelectorAll("a").forEach(link => {
+  if (!name || !email || !subject || !message) {
 
-    link.addEventListener("click", () => {
+    contactFeedback.textContent =
+      "Please fill in all the fields.";
 
-        navbar.classList.remove("open");
+    return;
 
-        const icon = menuToggle.querySelector("i");
+  }
 
-        icon.classList.remove("fa-xmark");
 
-        icon.classList.add("fa-bars");
+  contactFeedback.textContent =
+    "Thank you, " + name +
+    "! Your demo message has been received on this page.";
 
-    });
+
+  contactForm.reset();
 
 });
 
 
-// 14. HEADER SCROLL EFFECT
+// ==================================================
+// 7. NEWSLETTER FORM
+// ==================================================
 
-const header = document.getElementById("header");
+const newsletterForm =
+  document.getElementById("newsletterForm");
 
-const backToTop =
-    document.getElementById("backToTop");
+const newsletterFeedback =
+  document.getElementById("newsletterFeedback");
 
+newsletterForm.addEventListener("submit", function(event) {
 
-window.addEventListener("scroll", () => {
+  event.preventDefault();
 
-    header.classList.toggle(
-        "scrolled",
-        window.scrollY > 80
-    );
+  const email =
+    document.getElementById("newsletterEmail").value.trim();
 
-    backToTop.classList.toggle(
-        "show",
-        window.scrollY > 400
-    );
+  if (!email) {
+
+    newsletterFeedback.textContent =
+      "Please enter your email address.";
+
+    return;
+
+  }
+
+  newsletterFeedback.textContent =
+    "Thank you for your interest in AUTOVERSE!";
+
+  newsletterForm.reset();
 
 });
 
 
-backToTop.addEventListener("click", () => {
+// ==================================================
+// 8. SCROLL REVEAL ANIMATION
+// ==================================================
 
-    window.scrollTo({
-        top: 0,
-        behavior: "smooth"
-    });
+const revealElements = document.querySelectorAll(
+  ".section-heading, .category-card, .car-card, " +
+  ".tech-card, .f1-info-card, .history-item, .intro-image"
+);
 
-});
+if ("IntersectionObserver" in window) {
 
+  const observer = new IntersectionObserver(
+    function(entries, observer) {
 
-// 15. SCROLL REVEAL ANIMATION
+      entries.forEach(function(entry) {
 
-const revealObserver = new IntersectionObserver(
-    entries => {
+        if (entry.isIntersecting) {
 
-        entries.forEach(entry => {
+          entry.target.classList.add("revealed");
 
-            if (entry.isIntersecting) {
+          observer.unobserve(entry.target);
 
-                entry.target.classList.add("visible");
+        }
 
-                revealObserver.unobserve(entry.target);
-
-            }
-
-        });
+      });
 
     },
     {
-        threshold: 0.12
+      threshold: 0.12
     }
-);
+  );
 
+  revealElements.forEach(function(element) {
 
-function observeRevealElements() {
+    element.classList.add("reveal");
 
-    document.querySelectorAll(".reveal:not(.visible)")
-    .forEach(element => {
+    observer.observe(element);
 
-        revealObserver.observe(element);
-
-    });
+  });
 
 }
 
 
-observeRevealElements();
+// ==================================================
+// 9. CURRENT YEAR IN FOOTER
+// ==================================================
+
+const footerCopyright =
+  document.querySelector(".footer-bottom span");
+
+if (footerCopyright) {
+
+  footerCopyright.textContent =
+    "© " + new Date().getFullYear() +
+    " AUTOVERSE. All rights reserved.";
+
+}
 
 
-// 16. CONTACT FORM DEMO
+// ==================================================
+// AUTOVERSE JAVASCRIPT INITIALIZED
+// ==================================================
 
-const contactForm =
-    document.getElementById("contactForm");
-
-const contactFeedback =
-    document.getElementById("contactFeedback");
-
-
-contactForm.addEventListener("submit", event => {
-
-    event.preventDefault();
-
-    const name =
-        document.getElementById("contactName").value.trim();
-
-    const email =
-        document.getElementById("contactEmail").value.trim();
-
-    const subject =
-        document.getElementById("contactSubject").value.trim();
-
-    const message =
-        document.getElementById("contactMessage").value.trim();
-
-
-    if (!name || !email || !subject || !message) {
-
-        contactFeedback.textContent =
-            "Please complete all fields.";
-
-        return;
-
-    }
-
-
-    contactFeedback.textContent =
-        "Thank you, " + name +
-        "! This is a demo form. Connect a backend to send your message.";
-
-    contactForm.reset();
-
-});
-
-
-// 17. SEARCH BUTTON
-
-document.getElementById("searchToggle")
-.addEventListener("click", () => {
-
-    document.getElementById("carSearch").focus();
-
-    document.getElementById("cars")
-    .scrollIntoView({ behavior: "smooth" });
-
-});
-
-
-// 18. CURRENT YEAR
-
-document.getElementById("currentYear").textContent =
-    new Date().getFullYear();
-
-
-// 19. LOADING SCREEN
-
-window.addEventListener("load", () => {
-
-    setTimeout(() => {
-
-        document.getElementById("loader")
-        .classList.add("hide");
-
-    }, 700);
-
-});
-
-
-// 20. IMAGE ERROR HANDLING
-
-document.addEventListener("error", event => {
-
-    if (event.target.tagName === "IMG") {
-
-        event.target.alt = "Car photo unavailable";
-
-        event.target.style.background = "#202b3a";
-
-    }
-
-}, true);
+console.log(
+  "AUTOVERSE 2026 - Welcome to the world of cars!"
+);
